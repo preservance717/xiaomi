@@ -186,6 +186,19 @@ function startab(a, ul) {
 
 startab(boxhda, boxbdu1);
 
+var switchiem = document.getElementsByClassName('switchiem');
+var reviewwrapper = document.getElementsByClassName('reviewwrapper');
+
+for (var i = 0; i < switchiem.length; i++) {
+    switchiem[i].index = i;
+    switchiem[i].onmouseover = function () {
+        reviewwrapper[this.index].style.height = 75 + 'px';
+    }
+    switchiem[i].onmouseout = function () {
+        reviewwrapper[this.index].style.height = 0;
+    }
+}
+
 function getByClass(oParent, sClass) {
     var aEle = oParent.getElementsByTagName('*');
     var aResult = [];

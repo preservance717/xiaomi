@@ -931,6 +931,168 @@ ul li .price {
     transform: translate3d(0, -2px, 0);
 }
 
+.tabswitch, .tabswitch2, .tabswitch3 {
+    margin: 0;
+    padding: 16px 0 0 0;
+    font-size: 16px;
+}
+
+.tabswitch li, .tabswitch2 li, .tabswitch3 li {
+    margin: 0 0 0 30px;
+    display: inline-block;
+    color: #424242;
+    border-bottom: 2px solid transparent;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.row6 {
+    float: left;
+    width: 234px;
+    margin-left: 14px;
+    min-height: 1px;
+}
+
+.boxbd .row6 ul li {
+    height: 300px;
+    padding: 0;
+}
+
+.boxbd .row6 ul li img {
+    height: 300px;
+    width: 234px;
+}
+
+.boxbd .row3 .switchiem {
+    height: 246px;
+    padding: 34px 0 20px;
+    position: relative;
+}
+
+.boxbd .row3 .switchiem > a {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 18px;
+}
+
+.boxbd .row3 .switchiem a img {
+    width: 150px;
+    height: 150px;
+}
+
+.boxbd .row3 .switchiem .price {
+    margin-bottom: 10px;
+}
+
+.boxbd .row3 .switchiem .rank {
+    margin: 0 10px;
+    font-size: 12px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #b0b0b0;
+}
+
+.reviewwrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 234px;
+    height: 0px;
+    /*opacity:0.1;*/
+    overflow: hidden;
+    background: #ff6700;
+    font-size: 12px;
+    transition: all .2s;
+}
+
+.reviewwrapper a {
+    display: block;
+    padding: 8px 30px;
+    outline: 0;
+}
+
+.reviewwrapper .review {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.reviewwrapper .author {
+    display: block;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.boxbd .row3 ul .items1 {
+    height: 93px;
+    padding: 50px 0 0 0;
+    position: relative;
+}
+
+.boxbd .row3 ul .items1 > a {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 32px;
+    width: 80px;
+    height: 80px;
+}
+
+.boxbd .row3 ul .items1 a .items1img {
+    width: 80px;
+    height: 80px;
+}
+
+.boxbd .row3 ul .items1 .title a {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.boxbd .row3 ul .items1 .price1 {
+    margin: 0 110px 0 30px;
+    font-size: 12px;
+    color: #ff6700;
+}
+
+.boxbd .row3 ul .items1 .figuremore {
+    position: absolute;
+    display: block;
+    color: #ff6700;
+    right: 35px;
+    top: 40px;
+    width: 48px;
+    height: 48px;
+}
+
+.boxbd .row3 ul .items1 .figuremore i {
+    font-size: 58px;
+    line-height: 58px;
+}
+
+.boxbd .row3 ul .items1 .more {
+    display: block;
+    margin: 20px 110px 0 30px;
+    font-size: 18px;
+    color: #333;
+
+}
+
+.boxbd .row3 ul .items1 .more small {
+    display: block;
+    font-size: 12px;
+    color: #757575;
+}
+
+.tabactive {
+    color: #ff6700 !important;
+    border-bottom: 2px solid #ff6700 !important;
+}
 
 
 
