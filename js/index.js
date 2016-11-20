@@ -30,14 +30,14 @@ var categoryitem = categoryList.getElementsByTagName('li');
 var itembox = categoryList.getElementsByTagName('div');
 var atitle = getByClass(categoryList, 'title');
 
-for(var i = 0; i <atitle.length; i++){
+for (var i = 0; i < atitle.length; i++) {
     var boxul = itembox[i].getElementsByTagName('ul');
     itembox[i].style.width = boxul.length * 265 + 'px';
     atitle[i].index = i;
     itembox[i].index = i;
 
     itembox[i].onmouseover = atitle[i].onmouseover = function () {
-        for(var i = 0; i< atitle.length;i++){
+        for (var i = 0; i < atitle.length; i++) {
             atitle[i].style.background = '';
             atitle[i].style.color = '';
         }
@@ -48,7 +48,7 @@ for(var i = 0; i <atitle.length; i++){
     }
 
     itembox[i].onmouseout = atitle[i].onmouseout = function () {
-        for(var i = 0; i< atitle.length;i++){
+        for (var i = 0; i < atitle.length; i++) {
             atitle[i].style.background = '';
             atitle[i].style.color = '';
         }
@@ -66,7 +66,7 @@ var next = document.getElementById('next');
 
 var now = 0;
 
-for(var i= 0; i<oli.length; i++){
+for (var i = 0; i < oli.length; i++) {
     oli[i].index = i;
     oli[i].onclick = function () {
         now = this.index;
@@ -75,9 +75,9 @@ for(var i= 0; i<oli.length; i++){
 }
 
 function tab() {
-    for(var j=0; j<oli.length; j++){
+    for (var j = 0; j < oli.length; j++) {
         oli[j].className = '';
-        move(tli[j], {opacity:0})
+        move(tli[j], {opacity: 0})
     }
 
     oli[now].className = "click";
@@ -86,8 +86,8 @@ function tab() {
 
 pre.onclick = function () {
     now--;
-    if(now == -1){
-        now = oli.length -1;
+    if (now == -1) {
+        now = oli.length - 1;
     }
 
     tab();
@@ -96,7 +96,7 @@ pre.onclick = function () {
 
 next.onclick = function () {
     now++;
-    if(now == oli.length){
+    if (now == oli.length) {
         now = 0;
     }
 
@@ -117,12 +117,35 @@ odiv.onmouseout = function () {
     move(pre, {opacity: 0});
 };
 
-function getByClass(oParent, sClass){
+var headernav = document.getElementById('header-nav');
+var siteheadr = document.getElementById('site-headr');
+var navitem = getByClass(headernav, 'nav-item');
+var navmenu = getByClass(siteheadr, 'navmenu');
+
+for (var i = 0; i < 7; i++) {
+    navitem[i].index = i;
+    navmenu[i].index = i;
+    navitem[i].onmouseover = navmenu[i].onmouseover = function () {
+        for (var i = 0; i < navmenu.length; i++) {
+            navmenu[i].style.display = 'none';
+        }
+
+        navmenu[this.index].style.display = 'block';
+    }
+
+    navitem[i].onmouseout = navmenu[i].onmouseout = function () {
+        for (var i = 0; i < navmenu.length; i++) {
+            navmenu[i].style.display = 'none';
+        }
+    }
+}
+
+function getByClass(oParent, sClass) {
     var aEle = oParent.getElementsByTagName('*');
     var aResult = [];
 
-    for(var i = 0; i < aEle.length; i++){
-        if(aEle[i].className == sClass){
+    for (var i = 0; i < aEle.length; i++) {
+        if (aEle[i].className == sClass) {
             aResult.push(aEle[i]);
         }
     }
@@ -130,7 +153,7 @@ function getByClass(oParent, sClass){
     return aResult;
 }
 
-function move(obj, jason, fn){
+function move(obj, jason, fn) {
     clearInterval(obj.timer);
     obj.timer = setInterval(function () {
         var mstop = true;
@@ -166,9 +189,9 @@ function move(obj, jason, fn){
 }
 
 function getStyle(obj, name) {
-    if(obj.currentStyle){
+    if (obj.currentStyle) {
         return obj.currentStyle[name];
-    }else{
+    } else {
         return getComputedStyle(obj, null)[name];
     }
 }
