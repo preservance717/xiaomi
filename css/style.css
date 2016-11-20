@@ -478,3 +478,68 @@ a {
 .heroslider #next:hover{
     background: url("../img/fanye.png") no-repeat -41px 50%;
 }
+
+.navmenu{
+    position:relative;
+    left:0;
+    z-index:99;
+    font-size:12px;
+    background-color: #fff;
+    /*display: none;*/
+    box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+    width:100%;
+    height: 229px;
+    border-top: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.navproduct{
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    padding:35px 10px 0;
+    text-align: center;
+}
+
+.navproduct:before {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 1;
+    width: 1px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0;
+}
+
+.navmenu .first:before{
+    background-color: #fff;
+}
+
+.navmenu .navtitle{
+    color:#000;
+    margin:0;
+}
+
+.navproduct .navtitle:hover{
+    color:#000;
+}
+
+.navproduct .navimg img{
+    width: 160px;
+    height:110px;
+    margin:0 auto 16px;
+}
+
+.navproduct .navprice{
+    margin:0;
+    color:#ff6700;
+}
+
+.navproduct .navimg, .navproduct .navtitle,.navproduct .navprice{
+    display:block;
+}
+
+.navproduct .navtitle, .navproduct .navprice{
+    line-height: 20px;
+}

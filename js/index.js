@@ -68,7 +68,7 @@ var now = 0;
 
 for(var i= 0; i<oli.length; i++){
     oli[i].index = i;
-    oli.onclick = function () {
+    oli[i].onclick = function () {
         now = this.index;
         tab();
     }
@@ -84,6 +84,39 @@ function tab() {
     move(tli[now], {opacity: 100});
 }
 
+pre.onclick = function () {
+    now--;
+    if(now == -1){
+        now = oli.length -1;
+    }
+
+    tab();
+
+};
+
+next.onclick = function () {
+    now++;
+    if(now == oli.length){
+        now = 0;
+    }
+
+    tab();
+};
+
+var timer0 = setInterval(next.onclick, 3000);
+
+odiv.onmouseover = function () {
+    clearInterval(timer0);
+    move(next, {opacity: 100});
+    move(pre, {opacity: 100});
+};
+
+odiv.onmouseout = function () {
+    timer0 = setInterval(next.onclick, 3000);
+    move(next, {opacity: 0});
+    move(pre, {opacity: 0});
+};
+
 function getByClass(oParent, sClass){
     var aEle = oParent.getElementsByTagName('*');
     var aResult = [];
@@ -95,4 +128,47 @@ function getByClass(oParent, sClass){
     }
 
     return aResult;
+}
+
+function move(obj, jason, fn){
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+        var mstop = true;
+
+        for (var attr in jason) {
+            var cur = 0;
+            if (attr == 'opacity') {
+                cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+            } else {
+                cur = parseInt(getStyle(obj, attr));
+            }
+
+            var speed = (jason[attr] - cur) / 6;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+            if (attr == 'opacity') {
+                obj.style.opacity = (cur + speed) / 100;
+                obj.style.filter = 'alpha(opacity:' + cur + speed + ')';
+            } else {
+                obj.style[attr] = cur + speed + 'px';
+            }
+
+            if (cur != jason[attr]) {
+                mstop = false;
+            }
+        }
+
+        if (mstop == true) {
+            clearInterval(obj.timer);
+            if (fn) fn();
+        }
+    }, 30);
+}
+
+function getStyle(obj, name) {
+    if(obj.currentStyle){
+        return obj.currentStyle[name];
+    }else{
+        return getComputedStyle(obj, null)[name];
+    }
 }
