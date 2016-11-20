@@ -54,7 +54,7 @@ a {
 }
 
 .container {
-    widhth: 1226px;
+    width: 1226px;
     margin: 0 auto;
 }
 
@@ -666,4 +666,135 @@ a {
 
 .horocontainer {
     position: relative;
+}
+
+.herorow .boxhd {
+    position: relative;
+    height: 58px;
+}
+
+.stargoods .boxbd {
+    position: relative;
+    width: 1226px;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.boxhd {
+    position: relative;
+}
+
+.boxhd .title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333333;
+}
+
+.boxhd .more {
+    top: 24px;
+    position: absolute;
+    right: 0;
+}
+
+.boxhd .more .control {
+    margin-left: -1px;
+    width: 24px;
+    height: 16px;
+    padding: 3px 5px;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 16px;
+    display: inline-block;
+    text-align: center;
+    color: #b0b0b0;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+}
+
+.chanpin {
+    height: 340px;
+}
+
+.chanpin ul {
+    width: 2480px;
+    height: 340px;
+    margin: 0;
+    padding: 0;
+    transition: all .4s;
+}
+
+#boxbd li {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.chanpin ul li {
+    height: 300px;
+    padding-top: 39px;
+    text-align: center;
+    background: #fafafa;
+    float: left;
+    width: 234px;
+    margin-right: 14px;
+    transition: all .2s linear;
+}
+
+.chanpin ul li a {
+    display: block;
+    width: 160px;
+    margin: 0 auto 22px;
+}
+
+.chanpin ul li a img {
+    width: 160px;
+    height: 160px;
+}
+
+.chanpin ul li h3 {
+    color: #212121;
+    margin: 0 20px 3px;
+    font-size: 14px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+ul li .desc {
+    text-align: center;
+    height: 18px;
+    margin: 0 20px 12px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #b0b0b0;
+}
+
+ul li .price {
+    text-align: center;
+    margin: 0;
+    color: #ff6709;
+}
+
+.chanpin .startitem1, .chanpin .startitem6 {
+    border-top-color: #ffac13;
+}
+
+.chanpin .startitem2, .chanpin .startitem7 {
+    border-top-color: #83c44e;
+}
+
+.chanpin .startitem3, .chanpin .startitem8 {
+    border-top-color: #2196f3;
+}
+
+.chanpin .startitem4, .chanpin .startitem9 {
+    border-top-color: #e53935;
+}
+
+.chanpin .startitem5, .chanpin .startitem10 {
+    border-top-color: #00c0a5;
 }

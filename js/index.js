@@ -125,6 +125,7 @@ var navmenu = getByClass(siteheadr, 'navmenu');
 for (var i = 0; i < 7; i++) {
     navitem[i].index = i;
     navmenu[i].index = i;
+
     navitem[i].onmouseover = navmenu[i].onmouseover = function () {
         for (var i = 0; i < navmenu.length; i++) {
             navmenu[i].style.display = 'none';
@@ -134,11 +135,56 @@ for (var i = 0; i < 7; i++) {
     }
 
     navitem[i].onmouseout = navmenu[i].onmouseout = function () {
-        for (var i = 0; i < navmenu.length; i++) {
+        for (var i = 0; i < 7; i++) {
             navmenu[i].style.display = 'none';
         }
     }
 }
+
+var boxhd = document.getElementById('boxhd');
+var boxbd = document.getElementById('boxbd');
+var boxhda = boxhd.getElementsByTagName('a');
+var boxbdu1 = boxbd.getElementsByTagName('ul')[0];
+
+function startab(a, ul) {
+    a[0].onclick = function () {
+        ul.style.marginLeft = 0;
+        a[1].style.color = "#b0b0b0";
+        a[0].style.color = "#e0e0e0";
+    }
+    a[1].onclick = function () {
+        ul.style.marginLeft = -1240 + "px";
+        a[0].style.color = "#b0b0b0";
+        a[1].style.color = "#e0e0e0";
+    }
+
+    function autostar() {
+        if (ul.style.marginLeft == 0 + "px") {
+            ul.style.marginLeft = -1240 + 'px';
+            a[0].style.color = "#b0b0b0";
+            a[1].style.color = "#e0e0e0";
+        } else {
+            ul.style.marginLeft = 0;
+            a[1].style.color = "#b0b0b0";
+            a[0].style.color = "#e0e0e0";
+        }
+    }
+
+    var timer = null;
+    timer = setInterval(autostar, 3000);
+
+    for (var k = 0; k < 2; k++) {
+        a[k].onmouseover = function () {
+            clearInterval(timer);
+        }
+
+        a[k].onmouseout = function () {
+            timer = setInterval(autostar, 3000);
+        }
+    }
+}
+
+startab(boxhda, boxbdu1);
 
 function getByClass(oParent, sClass) {
     var aEle = oParent.getElementsByTagName('*');
